@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+
+}
+
+@font-face {
+    font-family:'Poppins';
+    src: url('./Poppins-Regular.ttf');
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+} 
+
+.cell:nth-child(3n + 3 ) {
+    border-right: none;
+}
+
+.cell:first-child,
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after  {
+    content: '';
+    width: 10px;
+    height: 75px;
+    background-color: black;
+    position: absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after  {
+    transform: rotate(-45deg);
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after 
+{
+    background-color: lightgray;
+}
+
+
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after  {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+}
+
+.cell.circle::after, 
+.board.circle .cell:not(.x):not(.circle):hover::after  {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+} 
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    background-color: lightgray;
+   
+}
+.board.circle .cell:not(.x):not(.circle):hover::after {
+    background-color: white;
+}
+
+
+
+.title-message {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 110px;
+}
+
+
+.result {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.result-message {
+    font-size: 3em;
+    visibility: hidden;
+    margin-top: 30px;
+    min-height: 70px;
+}
+
+.result-message.show {
+    visibility: unset;
+}
+
+.result button {
+    display: flex;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    background-color: black;
+    color: white;
+}
+
+.rst-btn img {
+    filter: invert();
+}
+
+.rst-btn:hover {
+    
+    filter: invert();
+}
+.tic-tac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    z-index: 4;
+    flex-direction: column;
+}
+.tic-tac img {
+    width: 120px;
+    height: auto;
+}
+
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+    background-color: white;
+    margin-top: 80px;
+}
+.input-div.hide {
+    display: none;
+}
+
+
+input {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 1.3rem;
+}
+
+form {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+form :nth-child(2),
+form :nth-child(4) {
+    margin-bottom: 30px;
+}
+
+.input-div .button   {
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+input:hover,
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+.button:hover {
+    background-color: #2e2e2e;
+}
+
+.footer { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    min-height: 60px;
+    width: 100vw;
+    gap: 10px;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.footer img {
+    max-height: 40px;
+    max-width: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*_______________________
+
+    MEDIA 
+  _______________________*/
+
+
+
+
+
+@media screen and (min-width: 450px) and (max-width: 550px){
+    body {
+        padding: 10px;
+    }
+    .title-message {
+        margin-top: 75px;
+        font-size: 1.8rem;
+    }
+    .tic-tac {
+        font-size: 4rem;
+    }
+    .result {
+        margin-top: 20px;
+    }
+    .result-message {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 450px){
+    body {
+        padding: 10px;
+    }
+    .title-message {
+        margin-top: 75px;
+        font-size: 1.8rem;
+    }
+    .tic-tac {
+        font-size: 3.5rem;
+    }
+    .result-message {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .board {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 375px){
+    body {
+        padding: 10px;
+        align-items: center;
+
+    }
+    .title-message {
+        margin-top: 90px;
+        font-size: 1.6rem;
+    }
+    .tic-tac {
+        font-size: 3rem;
+    }
+    .result-message {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .board {
+        margin-bottom: 20px;
+    }
+    .cell {
+        width: 80px;
+        height: 80px;
+    }
+    input {
+        font-size: 1rem;
+    }
+    .input-div {
+        font-size: 1.5rem;
+    }
+    .footer {
+        font-size: 1rem;
+    }
+    .footer img {
+        width: 35px;
+    }
+}
