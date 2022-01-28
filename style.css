@@ -18,7 +18,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
 }
 
 .board {
@@ -132,7 +131,6 @@ body {
     justify-content: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    margin-top: 110px;
 }
 
 
@@ -183,6 +181,7 @@ body {
     font-size: 5rem;
     z-index: 4;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 .tic-tac img {
     width: 120px;
@@ -290,11 +289,11 @@ input:focus {
         padding: 10px;
     }
     .title-message {
-        margin-top: 75px;
         font-size: 1.8rem;
     }
     .tic-tac {
         font-size: 4rem;
+        margin-bottom: 40px;
     }
     .result {
         margin-top: 20px;
@@ -306,22 +305,42 @@ input:focus {
 }
 
 @media screen and (min-width: 375px) and (max-width: 450px){
-    body {
-        padding: 10px;
-    }
+    
     .title-message {
-        margin-top: 75px;
+        margin-top: unset;
         font-size: 1.8rem;
     }
     .tic-tac {
         font-size: 3.5rem;
+        margin-bottom: 40px;
     }
     .result-message {
         text-align: center;
         font-size: 2rem;
+        min-height: 50px;
     }
     .board {
         margin-bottom: 20px;
+    }
+    .cell {
+        width: 90px;
+        height: 90px;
+    }
+    .form {
+        max-width: 330px;
+    }
+    input {
+        font-size: 1rem;
+    }
+    .input-div {
+        font-size: 1.5rem;
+    }
+    .footer {
+        font-size: 1rem;
+        z-index: -1;
+    }
+    .footer img {
+        width: 35px;
     }
 }
 
@@ -333,11 +352,11 @@ input:focus {
 
     }
     .title-message {
-        margin-top: 90px;
         font-size: 1.6rem;
     }
     .tic-tac {
         font-size: 3rem;
+        margin-bottom: 40px;
     }
     .result-message {
         text-align: center;
@@ -358,6 +377,7 @@ input:focus {
     }
     .footer {
         font-size: 1rem;
+        z-index: -1;
     }
     .footer img {
         width: 35px;
