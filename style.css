@@ -200,7 +200,6 @@ body {
     width: 100vw;
     z-index: 3;
     background-color: white;
-    margin-top: 80px;
 }
 .input-div.hide {
     display: none;
@@ -219,7 +218,7 @@ form {
     align-items: center; 
     gap: 10px;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 80px;
     padding: 25px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -285,14 +284,11 @@ input:focus {
 
 
 @media screen and (min-width: 450px) and (max-width: 550px){
-    body {
-        padding: 10px;
-    }
     .title-message {
         font-size: 1.8rem;
     }
     .tic-tac {
-        font-size: 4rem;
+        font-size: 3.5rem;
         margin-bottom: 40px;
     }
     .result {
@@ -305,9 +301,8 @@ input:focus {
 }
 
 @media screen and (min-width: 375px) and (max-width: 450px){
-    
     .title-message {
-        margin-top: unset;
+
         font-size: 1.8rem;
     }
     .tic-tac {
@@ -326,8 +321,8 @@ input:focus {
         width: 90px;
         height: 90px;
     }
-    .form {
-        max-width: 330px;
+    form {
+        max-width: 280px;
     }
     input {
         font-size: 1rem;
@@ -335,45 +330,72 @@ input:focus {
     .input-div {
         font-size: 1.5rem;
     }
+    .input-div .button {
+        font-size: 1rem;
+    }
     .footer {
         font-size: 1rem;
         z-index: -1;
     }
     .footer img {
         width: 35px;
+    }
+    .cell.x::before,
+    .cell.x::after {
+        height: 60px;
+        width: 7px;
+    }
+    .cell.circle::before {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+    }
+    .cell.circle::after {
+        width: 40px;
+        height: 40px;
+        background-color: white;
     }
 }
 
 
 @media screen and (max-width: 375px){
-    body {
-        padding: 10px;
-        align-items: center;
-
-    }
     .title-message {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     .tic-tac {
         font-size: 3rem;
-        margin-bottom: 40px;
+    }
+    .tic-tac img {
+        width: 80px;
+        height: auto;
     }
     .result-message {
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        min-height: 40px;
+    }
+    .result button {
+        font-size: 1rem;
+        padding: 4px 8px;
     }
     .board {
         margin-bottom: 20px;
     }
     .cell {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     input {
         font-size: 1rem;
     }
+    form {
+        max-width: 260px;
+    }
     .input-div {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .input-div .button {
+        font-size: 1rem;
     }
     .footer {
         font-size: 1rem;
@@ -382,4 +404,20 @@ input:focus {
     .footer img {
         width: 35px;
     }
+    .cell.x::before,
+    .cell.x::after {
+        height: 60px;
+        width: 7px;
+    }
+    .cell.circle::before {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+    }
+    .cell.circle::after {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+    }
+
 }
