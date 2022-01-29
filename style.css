@@ -17,7 +17,6 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .board {
@@ -130,20 +129,32 @@ body {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
 }
 
 
 .result {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.96;
+    text-transform: uppercase;
+    justify-content: center;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 30px;
+    background-color: white;
+    z-index: 4;
+}
+.result.hide {
+    display: none;
 }
 
+
 .result-message {
-    font-size: 3em;
+    font-size: 4em;
     visibility: hidden;
     margin-top: 30px;
     min-height: 70px;
@@ -179,9 +190,9 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    z-index: 4;
+    z-index: 3;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-top: 50px;
 }
 .tic-tac img {
     width: 120px;
@@ -198,8 +209,10 @@ body {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: 3;
+    z-index: 2;
     background-color: white;
+    padding-top: 8rem;
+
 }
 .input-div.hide {
     display: none;
@@ -302,7 +315,8 @@ input:focus {
 
 @media screen and (min-width: 375px) and (max-width: 450px){
     .title-message {
-
+        margin-top: 7rem;
+        margin-bottom: 2rem;
         font-size: 1.8rem;
     }
     .tic-tac {
@@ -332,6 +346,7 @@ input:focus {
     }
     .input-div {
         font-size: 1.5rem;
+        padding-top: 1rem;
     }
     .input-div .button {
         font-size: 1rem;
@@ -364,6 +379,8 @@ input:focus {
 @media screen and (max-width: 375px){
     .title-message {
         font-size: 1.4rem;
+        margin-top: 7rem;
+        margin-bottom: 2rem;
     }
     .tic-tac {
         font-size: 3rem;
@@ -398,6 +415,8 @@ input:focus {
     }
     .input-div {
         font-size: 1.2rem;
+        padding-top: 1rem;
+
     }
     .input-div .button {
         font-size: 1rem;

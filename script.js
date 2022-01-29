@@ -12,6 +12,7 @@ const playerOne = document.querySelector('.player1');
 const playerTwo = document.querySelector('.player2');
 const addBtn = document.querySelector('.add-button');
 const inputs = document.querySelector('.input-div')
+const resultDiv = document.querySelector('.result')
 
 
 startGame();
@@ -91,6 +92,7 @@ function endGame (draw) {
         }); 
     }
     resultMessage.classList.add('show')
+    resultDiv.classList.remove('hide');
 }
 
 
@@ -117,6 +119,7 @@ function handleRestart () {
     cells.forEach(item => item.classList.remove('x', 'circle'));
     resultMessage.classList.remove('show')
     inputs.classList.remove('hide');
+    resultDiv.classList.add('hide');
     startGame();
  
 }
