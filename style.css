@@ -333,6 +333,10 @@ input:focus {
         font-size: 2rem;
         min-height: 50px;
     }
+    .trophy {
+        width: 150px;
+        height: auto;
+    }
     .board {
         margin-bottom: 20px;
     }
@@ -398,6 +402,10 @@ input:focus {
         text-align: center;
         font-size: 1.5rem;
         min-height: 40px;
+    }
+    .trophy {
+        width: 150px;
+        height: auto;
     }
     .result button {
         font-size: 1rem;
